@@ -4,11 +4,10 @@ import { loadState, saveState } from "../Utils/LocalStorage.js"
 
 
 function _draw() {
-  let lists = ProxyState.lists;
+  let list = ProxyState.list;
   let template = ''
-  lists.forEach(l => template += l.template)
+  list.forEach(l => template += l.Template)
   document.getElementById("Lists").innerHTML = /* html */ `
-<a>Test</a>
       ${template}
   </div>
   `
@@ -17,7 +16,7 @@ function _draw() {
 export default class ListsController {
   constructor() {
     console.log(" List Controller - Constructor")
-    ProxyState.on("lists", _draw);
+    ProxyState.on("list", _draw);
     _draw()
   }
 

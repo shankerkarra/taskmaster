@@ -13,12 +13,12 @@ class AppState extends EventEmitter {
     new List({
       id: '123456',
       name: 'Test1',
-      color: '#324231'
+      color: '#25f6bd'
     }),
     new List({
       id: '234567',
       name: 'Test2',
-      color: '#565474'
+      color: '#2a4f45'
     })
   ];
 }
