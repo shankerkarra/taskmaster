@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <title>TaskMaster</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
+            <a class="navbar-brand" href="#">
+                <!-- <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy"> -->
+                <span class="ml-2">TaskMaster</span>
+            </a>
+        </nav>
+    </header>
+    <main class="container">
+        <!-- <div class="div">
+            <div class="Card d-flex flex-control justify-align-center">
+                <div class="row justify-align-center">
+                    <div class="col-xs-2">
+                        <label for="ex1"></label>
+                        <input class="form-control" id="ex1" type="text" width="50" name="listname" width="50"
+                            id="listname" value="" minlength="3" and maxlength="50" placeholder="List Name....">
+                    </div>
+                    <div class="col-xs-2">
+                        <a>Need to add Color Selection</a>
+                    </div>
+                    <div class="col-xs-2">
+                        <button type="button" class="btn btn-secondary btn-lg">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="tab-pane fade show active" id="" role="tabpanel" aria-labelledby="">
+            <div class="row">
+                <div class="col-4 mt-2">
+                    <div class="d-flex p-3 justify-align-center" onsubmit="app.housesController.createHouse()">
+                        <div class="form-group m-2">
+                            <input type="text" name="listname" id="listname" class="form-control"
+                                placeholder="List Name..." required="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 mt-2">
+                    <label for="color">Add color selection</label>
+                </div>
+                <div class="col-4 mt-2">
+                    <div class="d-flex align-items-center p-3 mt-4">
+                        <button type="submit" onclick="app.listController.addlist()"
+                            class="btn btn-outline-success">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="Lists">
+            <!-- <div class="col-md-3 col-sm-2 my-3">
+                <div class="car bg-light shadow">
+                    <img src="//placehold.it/200x200" class="w-100" alt="car">
+                    <div class="p-3">
+                        <div class="text-center">
+                            <p><b>YEAR - MAKE - MODEL</b></p>
+                        </div>
+                        <p>DESCRIPTION</p>
+                        <p><em>PRICE</em></p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        </div>
+    </main>
+    <footer class="bg-dark text-light">
+        <div class="text-center">
+            <p><small>Developed by Shanker Karra(UI design is work in progress)</small></p>
+        </div>
+    </footer>
+
+    <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
