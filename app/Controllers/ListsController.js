@@ -7,10 +7,7 @@ function _draw() {
   let list = ProxyState.list;
   let template = ''
   list.forEach(l => template += l.Template)
-  document.getElementById("Lists").innerHTML = /* html */ `
-      ${template}
-  </div>
-  `
+  document.getElementById("Lists").innerHTML = template
 }
 
 export default class ListsController {
@@ -21,8 +18,15 @@ export default class ListsController {
   }
 
   addList() {
+    event.preventDefault();
     console.log(" List Controller - addList")
-    // let form = event.target
-    listsService.addList()
+    let form = event.target
+    let userinput = {
+      lname: form.listname.value,
+      lcolor: form.colorselected.value
+    }
+    console.log(form)
+    listsService.addList(userinput)
+    form.reset()
   }
 }

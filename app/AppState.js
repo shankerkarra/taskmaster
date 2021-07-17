@@ -13,16 +13,15 @@ class AppState extends EventEmitter {
     new List({
       id: '123456',
       name: 'Test1',
-      color: '#25f6bd'
+      color: 'bg-success'
     }),
     new List({
       id: '234567',
       name: 'Test2',
-      color: '#2a4f45'
+      color: 'bg-warning'
     })
   ];
 }
-
 
 export const ProxyState = new Proxy(new AppState(), {
   get(target, prop) {

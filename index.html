@@ -22,47 +22,33 @@
         </nav>
     </header>
     <main class="container">
-        <!-- <div class="div">
-            <div class="Card d-flex flex-control justify-align-center">
-                <div class="row justify-align-center">
-                    <div class="col-xs-2">
+        <div class="row">
+            <div class="col-md-6 m-3">
+                <form onsubmit="app.listsController.addList()" class="text-light d-flex justify-content-between">
+                    <div class="form-group">
                         <label for="ex1"></label>
                         <input class="form-control" id="ex1" type="text" width="50" name="listname" width="50"
                             id="listname" value="" minlength="3" and maxlength="50" placeholder="List Name....">
                     </div>
-                    <div class="col-xs-2">
-                        <a>Need to add Color Selection</a>
+                    <div class="form-group">
+                        <select id="colorselected">
+                            <label for="colordrpdn">Color :</label>
+                            <option value="bg_danger">Red</option>
+                            <option value="bg_primary">Blue</option>
+                            <option value="bg_success">Green</option>
+                            <option value="bg_warning">Yellow</option>
+                            <option value="bg_info">Orange</option>
+                        </select>
                     </div>
                     <div class="col-xs-2">
-                        <button type="button" class="btn btn-secondary btn-lg">Create</button>
+                        <button type="button" class="btn btn-secondary btn-sm">Create</button>
                     </div>
-                </div>
-            </div>
-        </div> -->
-        <div class="tab-pane fade show active" id="" role="tabpanel" aria-labelledby="">
-            <div class="row">
-                <div class="col-4 mt-2">
-                    <div class="d-flex p-3 justify-align-center" onsubmit="app.housesController.createHouse()">
-                        <div class="form-group m-2">
-                            <input type="text" name="listname" id="listname" class="form-control"
-                                placeholder="List Name..." required="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 mt-2">
-                    <label for="color">Add color selection</label>
-                </div>
-                <div class="col-4 mt-2">
-                    <div class="d-flex align-items-center p-3 mt-4">
-                        <button type="submit" onclick="app.listsController.addlist()"
-                            class="btn btn-outline-success">Create</button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
         <div class="row" id="Lists">
-            <!-- <div class="card border-black mb-3" style="max-width: 18rem;">
-                <div class="card-header bg-transparent" id="listtasktitle">List Header</div>
+            <div class="card border-black mb-3" style="max-width: 18rem;">
+                <div class="card-header" id="listtasktitle">List Header</div>
                 <div class="card-body">
                     <p class="card-text" id=ListTasks>Some quick example text to....
                         <br>
@@ -70,7 +56,7 @@
                     </p>
                 </div>
                 <div class="card-footer bg-transparent">Text box in Footer</div>
-            </div> -->
+            </div>
             <!-- The below will be removed at a later stage -->
             <!-- <div class="col-md-3 col-sm-2 my-3">
                 <div class="car bg-light shadow">
@@ -91,7 +77,6 @@
             <p><small>Developed by Shanker Karra(UI design is work in progress)</small></p>
         </div>
     </footer>
-
     <script src="app/main.js" type="module"></script>
 </body>
 
