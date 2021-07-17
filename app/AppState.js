@@ -8,19 +8,9 @@ class AppState extends EventEmitter {
   /** @type {Value[]} */
   //values = []
 
+  lists = []
+  tasks = []
 
-  list = [
-    new List({
-      id: '123456',
-      name: 'Test1',
-      color: 'bg-success'
-    }),
-    new List({
-      id: '234567',
-      name: 'Test2',
-      color: 'bg-warning'
-    })
-  ];
 }
 
 export const ProxyState = new Proxy(new AppState(), {

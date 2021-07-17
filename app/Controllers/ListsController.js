@@ -4,22 +4,23 @@ import { loadState, saveState } from "../Utils/LocalStorage.js"
 
 
 function _draw() {
-  let list = ProxyState.list;
+  let lists = ProxyState.lists;
   let template = ''
-  list.forEach(l => template += l.Template)
+  lists.forEach(l => template += l.Template)
   document.getElementById("Lists").innerHTML = template
 }
 
 export default class ListsController {
   constructor() {
     console.log(" List Controller - Constructor")
-    ProxyState.on("list", _draw);
+    ProxyState.on("lists", _draw);
     _draw()
   }
 
   addList() {
     event.preventDefault();
     console.log(" List Controller - addList")
+    debugger;
     let form = event.target
     let userinput = {
       lname: form.listname.value,

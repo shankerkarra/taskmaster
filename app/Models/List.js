@@ -2,10 +2,10 @@ import { ProxyState } from "../AppState.js"
 import { generateId } from "../Utils/GenerateId.js"
 
 export default class List {
-  constructor({ name, color, id = generateId() }) {
-    console.log(" List - constructor")
-    this.name = name
-    this.color = color
+  constructor({ lname, lcolor, id = generateId() }) {
+    console.log(" Constructor in List.js" + lname + " " + lcolor)
+    this.name = lname
+    this.color = lcolor
     this.id = id
   }
   get Template() {

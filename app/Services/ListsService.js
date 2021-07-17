@@ -2,9 +2,9 @@ import { ProxyState } from "../AppState.js"
 import List from "../Models/List.js"
 
 class ListsService {
-  addList() {
-    console.log(" List Service - addList")
-    ProxyState.list = [...ProxyState.list, new List()]
+  addList(userinput) {
+    console.log(" List Service - addList" + userinput)
+    ProxyState.lists = [...ProxyState.lists, new List(userinput)]
   }
 }
 export const listsService = new ListsService();

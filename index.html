@@ -16,7 +16,6 @@
     <header>
         <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
             <a class="navbar-brand" href="#">
-                <!-- <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy"> -->
                 <span class="ml-2">TaskMaster</span>
             </a>
         </nav>
@@ -27,17 +26,17 @@
                 <form onsubmit="app.listsController.addList()" class="text-light d-flex justify-content-between">
                     <div class="form-group">
                         <label for="ex1"></label>
-                        <input class="form-control" id="ex1" type="text" width="50" name="listname" width="50"
-                            id="listname" value="" minlength="3" and maxlength="50" placeholder="List Name....">
+                        <input class="form-control" type="text" name="listname" width="50" id="listname" value=""
+                            minlength="3" and maxlength="15" placeholder="List Name....">
                     </div>
                     <div class="form-group">
                         <select id="colorselected">
                             <label for="colordrpdn">Color :</label>
-                            <option value="bg_danger">Red</option>
-                            <option value="bg_primary">Blue</option>
-                            <option value="bg_success">Green</option>
-                            <option value="bg_warning">Yellow</option>
-                            <option value="bg_info">Orange</option>
+                            <option value="bg-danger">Red</option>
+                            <option value="bg-primary">Blue</option>
+                            <option value="bg-success">Green</option>
+                            <option value="bg-warning">Yellow</option>
+                            <option value="bg-info">Orange</option>
                         </select>
                     </div>
                     <div class="col-xs-2">
@@ -47,16 +46,6 @@
             </div>
         </div>
         <div class="row" id="Lists">
-            <div class="card border-black mb-3" style="max-width: 18rem;">
-                <div class="card-header" id="listtasktitle">List Header</div>
-                <div class="card-body">
-                    <p class="card-text" id=ListTasks>Some quick example text to....
-                        <br>
-                        testing only
-                    </p>
-                </div>
-                <div class="card-footer bg-transparent">Text box in Footer</div>
-            </div>
         </div>
     </main>
     <footer class="bg-dark text-light">

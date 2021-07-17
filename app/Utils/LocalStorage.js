@@ -4,7 +4,7 @@ import List from "../Models/List.js";
 
 export function saveState() {
   localStorage.setItem('SkTaskMastr', JSON.stringify({
-    List: ProxyState.List,
+    Lists: ProxyState.Lists,
   }))
   console.log('saved state', ProxyState)
 }
@@ -13,7 +13,7 @@ export function loadState() {
   let data = JSON.parse(localStorage.getItem('SkTaskMastr'))
   console.log(data)
   if (data != null) {
-    ProxyState.list = data.list.map(p => new List(p))
+    ProxyState.lists = data.lists.map(p => new List(p))
   }
 
 }
