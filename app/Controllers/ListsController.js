@@ -35,7 +35,21 @@ export default class ListsController {
   }
 
   delList(id) {
-    listsService.delList(id)
+    var result = confirm("Press a button!");
+    if (result == true) {
+      listsService.delList(id)
+    }
+  }
+
+  mycbClick(elem) {
+    debugger;
+    var checkBox = elem;
+    var p = document.getElementsByTagName('p')[1];
+    if (checkBox.checked == true) {
+      // call method to modify the value
+      // call a common function to update the Count of check/total
+      p.innerHTML = "Checkbox <b>" + checkBox.id + "</b> is CHECKED!"
+    }
   }
 
   addTask(listId) {
@@ -43,13 +57,18 @@ export default class ListsController {
     let form = event.target
     let listTask = {
       listId,
-      name: form.task.value
+      name: form.task.value,
+      checked: false
     }
     listsService.addTask(listTask)
+    countTask(listId);
     form.reset()
   }
 
   delTask(id) {
-    listsService.delTask(id)
+    var result = confirm("Press a button!");
+    if (result == true) {
+      listsService.delTask(id)
+    }
   }
 }
