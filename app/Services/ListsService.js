@@ -6,7 +6,7 @@ class ListsService {
   addList(userinput) {
     console.log(" List Service - addList" + userinput)
     ProxyState.lists = [...ProxyState.lists, new List(userinput)]
-    console.log(ProxyState.lists)
+
   }
   delList(id) {
     ProxyState.lists = ProxyState.lists.filter(lists => lists.id != id)

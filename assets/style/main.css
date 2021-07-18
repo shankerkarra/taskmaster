@@ -10695,4 +10695,13 @@ main {
   flex-grow: 1;
 }
 
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.cell-breakWord {
+   word-wrap: break-word;
+   max-width: 1px;
+}
 /*# sourceMappingURL=main.css.map */
+

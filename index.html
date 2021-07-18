@@ -25,14 +25,14 @@
     </header>
     <main class="container">
         <div class="row">
-            <div class="col-md-6 m-3">
+            <div class="m-3">
                 <form onsubmit="app.listsController.addList()" class="text-light d-flex justify-content-between">
                     <div class="form-group">
-                        <label for="ex1"></label>
+                        <label for="list"></label>
                         <input class="form-control" type="text" name="listname" width="50" id="listname" value=""
-                            minlength="3" and maxlength="15" placeholder="List Name....">
+                            minlength="3" and maxlength="15" required placeholder="List Name....">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group p-4">
                         <select id="colorselected">
                             <label for="colordrpdn">Color :</label>
                             <option value="bg-danger">Red</option>
@@ -42,14 +42,30 @@
                             <option value="bg-info">Orange</option>
                         </select>
                     </div>
-                    <div class="col-xs-2">
+                    <div class="col-md-3 col-xs-2 p-4">
                         <button type="submit" class="btn btn-secondary btn-sm">Create</button>
                     </div>
                 </form>
             </div>
         </div>
         <div class="row" id="Lists">
+            <div class="card border-black mb-3" style="max-width: 18rem;">
+                <div class="card-header text-center ${this.color}" id="listtasktitle">${this.name}
+                    <p class="card-text" id=TaskCount> 2/4 </p>
+                    <i class="fa fa-trash action text-danger" title="delete list"
+                        onclick="app.listsController.delList('${this.id}')"></i>
+                </div>
+                <div class="m-2 p-2 word-wrap">
+                    ${this.MyTask}
+                </div>
+                <form onsubmit="app.listsController.addTask('${this.id}')">
+                    <input type="text" minlength="3" and maxlength="50" name="task" placeholder="Add Task..." required>
+                    <button type="submit" class="btn btn-outline-success">+</button>
+                </form>
+            </div>
         </div>
+
+
     </main>
     <footer class="bg-dark text-light">
         <div class="text-center">

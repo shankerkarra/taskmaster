@@ -27,10 +27,9 @@ export default class ListsController {
     console.log(" List Controller - addList")
     let form = event.target
     let userinput = {
-      lname: form.listname.value,
-      lcolor: form.colorselected.value
+      name: form.listname.value,
+      color: form.colorselected.value
     }
-    console.log(form)
     listsService.addList(userinput)
     form.reset()
   }
@@ -40,7 +39,6 @@ export default class ListsController {
   }
 
   addTask(listId) {
-    debugger;
     event.preventDefault()
     let form = event.target
     let listTask = {
