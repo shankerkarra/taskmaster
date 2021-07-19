@@ -12,7 +12,7 @@ function _draw() {
 
 export default class ListsController {
   constructor() {
-    console.log(" List Controller - Constructor")
+    //  console.log(" List Controller - Constructor")
     ProxyState.on("lists", _draw)
     ProxyState.on('tasks', _draw)
     ProxyState.on('lists', saveState)
@@ -24,7 +24,7 @@ export default class ListsController {
 
   addList() {
     event.preventDefault();
-    console.log(" List Controller - addList")
+    // console.log(" List Controller - addList")
     let form = event.target
     let userinput = {
       name: form.listname.value,
@@ -42,10 +42,12 @@ export default class ListsController {
   }
 
   mycbClick(elem) {
+    event.preventDefault()
     var checkBox = elem;
     var p = document.getElementsByTagName('p')[1];
     if (checkBox.checked == true) {
       listsService.toggleCheckbox(elem.id, elem.checked);
+      // form.reset()
     }
   }
 
