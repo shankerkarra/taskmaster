@@ -14,7 +14,7 @@ export default class List {
             <div class="card border-black mb-3">
                 <div class="card-header text-center ${this.color}" id="listtasktitle">
                 ${this.name}
-                  <p class="card-text card-wrap" id=TaskCount> 2/4 </p>
+                  <p class="card-text card-wrap" id='${this.id}'> 2/4 </p>
                             <i class="fa fa-trash action text-danger" title="delete list" onclick="app.listsController.delList('${this.id}')"></i>
                 </div>
                   <div class = "card p-3">

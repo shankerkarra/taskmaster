@@ -42,12 +42,13 @@ export default class ListsController {
   }
 
   mycbClick(elem) {
+    // debugger;
     event.preventDefault()
     var checkBox = elem;
     var p = document.getElementsByTagName('p')[1];
     if (checkBox.checked == true) {
       listsService.toggleCheckbox(elem.id, elem.checked);
-      // form.reset()
+      //form.reset()
     }
   }
 

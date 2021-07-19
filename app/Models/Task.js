@@ -5,14 +5,15 @@ export default class Task {
     this.id = id
     this.listId = listId
     this.name = name
-    this.checked = checked
+    this.checked = checked || false
   }
 
   get Template() {
     return `
         <div class="custom-control custom-checkbox" style="width:15rem;" >
           <input type="checkbox" class="custom-control-input"
-          id=${this.id} onclick="app.listsController.mycbClick(${this.id})">
+          id=${this.id}
+           onclick="app.listsController.mycbClick(${this.id})">
           <label class="custom-control-label col-10" for=${this.id}>${this.name}</label>
           <i class="fa fa-trash action text-danger" title="delete list" onclick="app.listsController.delTask('${this.id}')"></i>
   </div>

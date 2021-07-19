@@ -13,18 +13,18 @@ class ListsService {
   }
   addTask(rawTask) {
     ProxyState.tasks = [...ProxyState.tasks, new Task(rawTask)]
-    //  countTask({ listId })
-    //   console.log("call countTask")
+    this.countTask(rawTask)
   }
   delTask(id) {
     ProxyState.tasks = ProxyState.tasks.filter(t => t.id != id)
+    this.countTask(rawTask)
   }
 
   toggleCheckbox(elem) {
     // var checkBox = elem;
     // var p = document.getElementsByTagName('p')[1];
     //if (checkBox.checked == 'true') {
-    //debugger;
+    //  debugger;
     let chngTask = ProxyState.tasks.find(t => t.id == elem)
     // call method to modify the value
     //  console.log(chngTask.checked)
@@ -46,27 +46,58 @@ class ListsService {
     //     el;
     //   }
     // }
-
+    this.cntTask(chngTask.listId)
   }
-
-  CntTask({ listId }) {
+  cntTask(listId) {
+    // debugger;
     let totalcount = ProxyState.tasks.filter(t => t.listId == listId)
-    let counter = 0;
-    for (const input of inputs) {
-      if (input.status == 0) counter += 1;
+    if (totalcount.length == undefined) {
+      totalcount = 0;
     }
-    return counter;
-
-  }
-  countTask({ listId }) {
-    //debugger;
-    let totalcount = ProxyState.tasks.filter(t => t.listId == listId)
-    // console.log("Total Count :" + totalcount)
+    else {
+      totalcount = totalcount.length
+    }
+    //   console.log("Total Count :" + totalcount.length)
 
     let chkcount = ProxyState.tasks.filter(t => t.listId == listId && t.checked == 'True')
-    // console.log("Total Count :" + chkcount)
+    if (chkcount.length == undefined) {
+      chkcount = 0;
+    }
+    else {
+      chkcount = chkcount.length
+    }
+    //   console.log("Total Checked Count :" + chkcount.length)
+    document.getElementById(listId).innerText = chkcount + "/" + totalcount
+  }
+  // CntTask({ listId }) {
+  //   let totalcount = ProxyState.tasks.filter(t => t.listId == listId)
+  //   let counter = 0;
+  //   for (const input of inputs) {
+  //     if (input.status == 0) counter += 1;
+  //   }
+  //   return counter;
 
+  // }
+  countTask({ listId }) {
+    //    debugger;
+    let totalcount = ProxyState.tasks.filter(t => t.listId == listId)
+    if (totalcount.length == undefined) {
+      totalcount = 0;
+    }
+    else {
+      totalcount = totalcount.length
+    }
+    //   console.log("Total Count :" + totalcount.length)
 
+    let chkcount = ProxyState.tasks.filter(t => t.listId == listId && t.checked == 'True')
+    if (chkcount.length == undefined) {
+      chkcount = 0;
+    }
+    else {
+      chkcount = chkcount.length
+    }
+    //   console.log("Total Checked Count :" + chkcount.length)
+    document.getElementById(listId).innerText = chkcount + "/" + totalcount
   }
   mycbClick(id, text) {
     // console.log("at Service Checkbox: " + id + " " + Text)
@@ -82,6 +113,7 @@ class ListsService {
 
       text.style.display = "none";
     }
+
   }
 }
 export const listsService = new ListsService();
