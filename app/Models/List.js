@@ -3,7 +3,7 @@ import { generateId } from "../Utils/GenerateId.js"
 
 export default class List {
   constructor({ name, color, id = generateId() }) {
-    console.log(" Constructor in List.js" + name + " " + color)
+    //  console.log(" Constructor in List.js" + name + " " + color)
     this.name = name
     this.color = color
     this.id = id

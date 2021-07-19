@@ -12,7 +12,7 @@ export default class Task {
     return `
         <div class="custom-control custom-checkbox" >
           <input type="checkbox" class="custom-control-input"
-          id=${this.id} onclick="app.listsController.mycbClick(${this.id})" unchecked>
+          id=${this.id} onclick="app.listsController.mycbClick(${this.id})">
           <label class="custom-control-label" for=${this.id}>${this.name}</label>
           <i class="fa fa-trash action text-danger" title="delete list" onclick="app.listsController.delTask('${this.id}')"></i>
   </div>

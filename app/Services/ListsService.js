@@ -4,42 +4,48 @@ import Task from "../Models/Task.js"
 
 class ListsService {
   addList(userinput) {
-    console.log(" List Service - addList" + userinput)
+    //   console.log(" List Service - addList" + userinput)
     ProxyState.lists = [...ProxyState.lists, new List(userinput)]
   }
   delList(id) {
     ProxyState.lists = ProxyState.lists.filter(lists => lists.id != id)
-    ProxyState.tasks = ProxyState.tasks.filter(tasks => tasks.listsId != id)
+    ProxyState.tasks = ProxyState.tasks.filter(tasks => tasks.listId != id)
   }
   addTask(rawTask) {
     ProxyState.tasks = [...ProxyState.tasks, new Task(rawTask)]
-    countTask({ listId })
-    console.log("call countTask")
+    //  countTask({ listId })
+    //   console.log("call countTask")
   }
   delTask(id) {
     ProxyState.tasks = ProxyState.tasks.filter(t => t.id != id)
   }
 
   toggleCheckbox(elem) {
-    var checkBox = elem;
+    // var checkBox = elem;
     // var p = document.getElementsByTagName('p')[1];
     //if (checkBox.checked == 'true') {
-    debugger;
-    let chngTask = ProxyState.tasks.filter(t => t.id == elem)
-    console.log(chngTask)
-    //  ProxyState.Tasks();
+    //debugger;
+    let chngTask = ProxyState.tasks.find(t => t.id == elem)
     // call method to modify the value
-    for (let i = 0; i < chngTask.length; i++) {
-      const el = chngTask[i];
-      const index = chngTask.findIndex(elm => el['id'] === elm['id']);
-      if (index === -1) {
-        continue;
-      }
-      else {
-        el[index] = { ['checked']: "True" };
-        el;
-      }
+    //  console.log(chngTask.checked)
+    if (chngTask.checked == "True") {
+      chngTask.checked = "false";
     }
+    else {
+      chngTask.checked = "True";
+    }
+    ProxyState.tasks = ProxyState.tasks
+    // for (let i = 0; i < chngTask.length; i++) {
+    //   const el = chngTask[i];
+    //   const index = chngTask.findIndex(elm => el['id'] === elm['id']);
+    //   if (index === -1) {
+    //     continue;
+    //   }
+    //   else {
+    //     el[index] = { ['checked']: "True" };
+    //     el;
+    //   }
+    // }
 
   }
 
@@ -53,17 +59,17 @@ class ListsService {
 
   }
   countTask({ listId }) {
-    debugger;
+    //debugger;
     let totalcount = ProxyState.tasks.filter(t => t.listId == listId)
-    console.log("Total Count :" + totalcount)
+    // console.log("Total Count :" + totalcount)
 
     let chkcount = ProxyState.tasks.filter(t => t.listId == listId && t.checked == 'True')
-    console.log("Total Count :" + chkcount)
+    // console.log("Total Count :" + chkcount)
 
 
   }
   mycbClick(id, text) {
-    console.log("at Service Checkbox: " + id + " " + Text)
+    // console.log("at Service Checkbox: " + id + " " + Text)
     var checkBox = document.getElementById(id);
     var text = document.getElementById("text");
     if (checkBox.checked === true) {

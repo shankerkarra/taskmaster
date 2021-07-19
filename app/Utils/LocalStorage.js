@@ -7,7 +7,7 @@ export function saveState() {
     lists: ProxyState.lists,
     tasks: ProxyState.tasks
   }))
-  console.log('saved state', ProxyState)
+  // console.log('saved state', ProxyState)
 }
 
 export function loadState() {
