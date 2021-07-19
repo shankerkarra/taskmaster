@@ -19,7 +19,7 @@ export default class ListsController {
     ProxyState.on('tasks', saveState)
 
     loadState()
-    // _draw()
+
   }
 
   addList() {
@@ -42,13 +42,10 @@ export default class ListsController {
   }
 
   mycbClick(elem) {
-    debugger;
     var checkBox = elem;
     var p = document.getElementsByTagName('p')[1];
     if (checkBox.checked == true) {
-      // call method to modify the value
-      // call a common function to update the Count of check/total
-      p.innerHTML = "Checkbox <b>" + checkBox.id + "</b> is CHECKED!"
+      listsService.toggleCheckbox(elem.id, elem.checked);
     }
   }
 
@@ -61,7 +58,6 @@ export default class ListsController {
       checked: false
     }
     listsService.addTask(listTask)
-    countTask(listId);
     form.reset()
   }
 

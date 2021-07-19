@@ -13,28 +13,67 @@ class ListsService {
   }
   addTask(rawTask) {
     ProxyState.tasks = [...ProxyState.tasks, new Task(rawTask)]
-   }
+    countTask({ listId })
+    console.log("call countTask")
+  }
   delTask(id) {
     ProxyState.tasks = ProxyState.tasks.filter(t => t.id != id)
   }
 
+  toggleCheckbox(elem) {
+    var checkBox = elem;
+    // var p = document.getElementsByTagName('p')[1];
+    //if (checkBox.checked == 'true') {
+    debugger;
+    let chngTask = ProxyState.tasks.filter(t => t.id == elem)
+    console.log(chngTask)
+    //  ProxyState.Tasks();
+    // call method to modify the value
+    for (let i = 0; i < chngTask.length; i++) {
+      const el = chngTask[i];
+      const index = chngTask.findIndex(elm => el['id'] === elm['id']);
+      if (index === -1) {
+        continue;
+      }
+      else {
+        el[index] = { ['checked']: "True" };
+        el;
+      }
+    }
+
+  }
+
+  CntTask({ listId }) {
+    let totalcount = ProxyState.tasks.filter(t => t.listId == listId)
+    let counter = 0;
+    for (const input of inputs) {
+      if (input.status == 0) counter += 1;
+    }
+    return counter;
+
+  }
   countTask({ listId }) {
-    let totalcount = ProxyState.tasks.filter(t => t.listId = listId)
+    debugger;
+    let totalcount = ProxyState.tasks.filter(t => t.listId == listId)
     console.log("Total Count :" + totalcount)
-    // var myArr = [{ "Hello World!": "Welcome!", "int": 10 }, { "Learn": "Share", "int": 20 }, { "Tutorials": "Quiz", "int": 30 }];
-    // myArr.forEach(function (val) {
-    //   if (!val.__proto__.__proto__) {
-    //     len++;
-    //   }
-    // })
+
+    let chkcount = ProxyState.tasks.filter(t => t.listId == listId && t.checked == 'True')
+    console.log("Total Count :" + chkcount)
+
+
   }
   mycbClick(id, text) {
     console.log("at Service Checkbox: " + id + " " + Text)
     var checkBox = document.getElementById(id);
     var text = document.getElementById("text");
     if (checkBox.checked === true) {
+      const el = chngTask[i];
+      const index = chngTask.findIndex(elm => el['id'] === elm['id']);
+      //     ['checked'] = "false";
       text.style.display = "block";
     } else {
+      //    ['checked'] = "true";
+
       text.style.display = "none";
     }
   }
