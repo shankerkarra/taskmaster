@@ -10,13 +10,12 @@ export default class Task {
 
   get Template() {
     return `
-        <div class="custom-control custom-checkbox" >
+        <div class="custom-control custom-checkbox" style="width:15rem;" >
           <input type="checkbox" class="custom-control-input"
           id=${this.id} onclick="app.listsController.mycbClick(${this.id})">
-          <label class="custom-control-label" for=${this.id}>${this.name}</label>
+          <label class="custom-control-label col-10" for=${this.id}>${this.name}</label>
           <i class="fa fa-trash action text-danger" title="delete list" onclick="app.listsController.delTask('${this.id}')"></i>
   </div>
-
 `
   }
 }

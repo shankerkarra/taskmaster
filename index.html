@@ -49,19 +49,22 @@
             </div>
         </div>
         <div class="row" id="Lists">
-            <div class="card border-black mb-3" style="max-width: 18rem;">
-                <div class="card-header text-center ${this.color}" id="listtasktitle">${this.name}
-                    <p class="card-text" id=TaskCount> 2/4 </p>
-                    <i class="fa fa-trash action text-danger" title="delete list"
-                        onclick="app.listsController.delList('${this.id}')"></i>
+            <div class="col-3">
+                <div class="card border-black mb-3" style="max-width: 18rem;">
+                    <div class="card-header text-center ${this.color}" id="listtasktitle">${this.name}
+                        <p class="card-text" id=TaskCount> 2/4 </p>
+                        <i class="fa fa-trash action text-danger" title="delete list"
+                            onclick="app.listsController.delList('${this.id}')"></i>
+                    </div>
+                    <div class="m-2 p-2 text-overflow: ellipsis break-word">
+                        ${this.MyTask}
+                    </div>
+                    <form onsubmit="app.listsController.addTask('${this.id}')">
+                        <input type="text" minlength="3" and maxlength="50" name="task" placeholder="Add Task..."
+                            required>
+                        <button type="submit" class="btn btn-outline-success">+</button>
+                    </form>
                 </div>
-                <div class="m-2 p-2 word-wrap">
-                    ${this.MyTask}
-                </div>
-                <form onsubmit="app.listsController.addTask('${this.id}')">
-                    <input type="text" minlength="3" and maxlength="50" name="task" placeholder="Add Task..." required>
-                    <button type="submit" class="btn btn-outline-success">+</button>
-                </form>
             </div>
         </div>
     </main>
